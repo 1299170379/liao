@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			请输入国家代码：<input v-model="NactionNumber" type="text" name="" id="" value="" /><br>
+			<br>
+			<div v-for="country in countrys">
+				<div v-if="NactionNumber==country.number">
+				国家名：{{country.name}}<br>
+				首都：{{country.capital}}<br>
+				国家代码：{{country.number}}<br>
+				</div>	
+			</div>
+			
+			
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					NactionNumber:'',
+					countrys:[
+						{name:'China',capital:'Beijing',number:'86'},
+						{name:'England',capital:'London',number:'44'},
+						{name:'Germany',capital:'Berlin',number:'49'},
+						{name:'Japan',capital:'Tokyo',number:'81'},
+						{name:'France',capital:'Paris',number:'33'}
+					]
+				}
+			})
+			
+		</script>
+	</body>
+</html>

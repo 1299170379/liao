@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input v-on:click="Number1=Math.ceil(Math.random()*5)" type="button" value="运行按钮"/><br />
+			<br>
+			<div v-for="user in users">
+				<div v-if="Number1==user.code">
+				获奖数字：{{Number1}}<br>
+				名字：{{user.name}}<br>
+				编号：{{user.code}}<br>
+				</div>	
+			</div>
+			
+			
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					Number1:'',
+					users:[
+						{name:'LiLi',code:'1'},
+						{name:'KoKo',code:'2'},
+						{name:'NiNi',code:'3'},
+						{name:'KiKi',code:'4'},
+						{name:'CoCo',code:'5'}
+					]
+				}
+			})
+			
+		</script>
+	</body>
+</html>
