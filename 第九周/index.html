@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--找不同-->
+		<div id="app">
+			<img src="img/1.jpg" @click="show()"/>
+			<br>
+			<span style="color:red">*请在第一张图上点击两张图不同的地方</span><br>
+			一共有五处不同，当前还剩{{Number}}处<br>
+			当前分数：{{score}}<br>
+			<li v-if="Number==0">恭喜你！挑战成功！</li>
+		</div>
+		<script type="text/javascript">
+			
+			let v=new Vue({
+				el:'#app',
+				data:{
+					Number:5,
+					score:0
+				},
+				methods:{
+					show(){
+						if(event.clientX>=145 && event.clientX<=167 && event.clientY>=230 && event.clientY<=256){
+							v.Number=v.Number-1;
+							v.score=v.score+20;
+						}
+						if(event.clientX>=85 && event.clientX<=97 && event.clientY>=147 && event.clientY<=164){
+							v.Number=v.Number-1;
+							v.score=v.score+20;
+						}
+						if(event.clientX>=349 && event.clientX<=409 && event.clientY>=366 && event.clientY<=385){
+							v.Number=v.Number-1;
+							v.score=v.score+20;
+						}
+						if(event.clientX>=192 && event.clientX<=229 && event.clientY>=312 && event.clientY<=332){
+							v.Number=v.Number-1;
+							v.score=v.score+20;
+						}
+						if(event.clientX>=58 && event.clientX<=77 && event.clientY>=297 && event.clientY<=310){
+							v.Number=v.Number-1;
+							v.score=v.score+20;
+						}
+						
+						
+					}
+				}
+			})			
+			</script>
+	</body>
+</html>
