@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<img src="img/tuzi.jpg" @click="show()" />
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+
+				},
+				methods:{
+					show(){
+						if(event.clientX>=270 && event.clientX<=282 && event.clientY>=164 && event.clientY<=177){
+							alert("验证成功！");
+						}
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>
